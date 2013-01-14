@@ -8,7 +8,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
-namespace xrstf\Composer52;
+namespace webworker01\Composer52;
 
 use Composer\Repository\CompositeRepository;
 use Composer\Script\Event;
