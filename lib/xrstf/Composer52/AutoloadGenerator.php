@@ -39,6 +39,7 @@ class AutoloadGenerator extends BaseGenerator {
 		$relVendorPath             = $filesystem->findShortestPath(getcwd(), $vendorPath, true);
 		$vendorPathCode            = $filesystem->findShortestPathCode(realpath($targetDir), $vendorPath, true);
 		$vendorPathToTargetDirCode = $filesystem->findShortestPathCode($vendorPath, realpath($targetDir), true);
+        $vendorPathToTargetDirCode = str_replace('__DIR__', 'dirname(__FILE__)', $vendorPathToTargetDirCode);
 
 		$appBaseDirCode = $filesystem->findShortestPathCode($vendorPath, getcwd(), true);
 		$appBaseDirCode = str_replace('__DIR__', '$vendorDir', $appBaseDirCode);
@@ -296,7 +297,7 @@ INCLUDE_PATH;
 
 		if ($usePSR0) {
 			$file .= <<<'PSR0'
-		$map = require $dir.'/autoload_namespaces.php';
+		$map = require $dir.'/autoload_namespaces_52.php';
 		foreach ($map as $namespace => $path) {
 			$loader->add($namespace, $path);
 		}
@@ -307,7 +308,7 @@ PSR0;
 
 		if ($useClassMap) {
 			$file .= <<<'CLASSMAP'
-		$classMap = require $dir.'/autoload_classmap.php';
+		$classMap = require $dir.'/autoload_classmap_52.php';
 		if ($classMap) {
 			$loader->addClassMap($classMap);
 		}
