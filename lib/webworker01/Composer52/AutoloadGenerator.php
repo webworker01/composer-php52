@@ -261,13 +261,13 @@ class ComposerAutoloaderInit$suffix {
 	private static \$loader;
 
 	public static function loadClassLoader(\$class) {
-		if ('xrstf_Composer52_ClassLoader' === \$class) {
+		if ('webworker01_Composer52_ClassLoader' === \$class) {
 			require dirname(__FILE__).'/ClassLoader52.php';
 		}
 	}
 
 	/**
-	 * @return xrstf_Composer52_ClassLoader
+	 * @return webworker01_Composer52_ClassLoader
 	 */
 	public static function getLoader() {
 		if (null !== self::\$loader) {
