@@ -16,14 +16,14 @@ In your project's `composer.json`, add the following lines:
     :::json
     {
         "require": {
-            "xrstf/composer-php52": "1.*@dev"
+            "webworker01/composer-php52": "1.*@dev"
         },
         "scripts": {
             "post-install-cmd": [
-                "xrstf\\Composer52\\Generator::onPostInstallCmd"
+                "webworker01\\Composer52\\Generator::onPostInstallCmd"
             ],
             "post-update-cmd": [
-                "xrstf\\Composer52\\Generator::onPostInstallCmd"
+                "webworker01\\Composer52\\Generator::onPostInstallCmd"
             ]
         }
     }
